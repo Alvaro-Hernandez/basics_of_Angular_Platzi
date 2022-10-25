@@ -1,1 +1,1 @@
-# basics_of_Angular
+# Curso de Fundamentos de Angular Platzi
