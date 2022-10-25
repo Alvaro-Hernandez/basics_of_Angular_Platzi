@@ -1,3 +1,4 @@
+Curso de Platzi y Carrera de Fronted Angular
 Verifica versión de Node: node -v
 
 Verifica versión de npm: npm -v
