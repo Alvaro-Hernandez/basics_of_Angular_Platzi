@@ -1,0 +1,46 @@
+String interpolation es la manera de enviar datos desde nuestro componente hacia la
+vista. Utilizando el doble símbolo de llaves {{ }}, o también conocidos como brackets,
+puedes imprimir el valor de una variable, realizar operaciones matemáticas o hacer el llamado a una función dentro del código HTML.
+
+Ejemplo:
+    <h1>{{ 'Hola Mundo' }}</h1>
+    <h2>1 + 1 = {{ 1 + 1 }}</h2>
+    <h3>{{ myFunction(); }}</h3>
+
+División de responsabilidad
+Un componente de Angular se divide en tres archivos: uno para el código TypeScript,
+ otro para el código HTML y uno más para el código CSS.
+
+Ejemplo:
+
+    import { Component } from '@angular/core';
+
+    @Component({
+      selector: 'app-root',
+      templateUrl: './app.component.html',
+      styleUrls: ['./app.component.scss']
+    })
+    export class AppComponent {
+      title = 'Hola soy Platzi';
+    }
+
+Angular usa el concepto de decoradores para modificar el comportamiento de las clases.
+La clase AppComponent implementa el decorador @Component() para indicarle a Angular que
+esta clase será un componente. Dentro de este decorador, puedes observar el selector
+del componente (un nombre para el mismo), el template HTML y la hoja de estilos queusará.
+
+Finalmente, dentro de la clase puedes declarar tus propiedades y métodos como en
+cualquier clase de la programación orientada a objetos. Tenemos una propiedad llamada
+title que es del tipo string. Podemos mostrar el valor de esta variable en el HTML
+con una interpolación:
+                        <p>{{ title }}</p>
+Es importante que tengas en cuenta la visibilidad de los atributos y métodos de una
+clase. Si estos llegaran a ser private, no podrás usarlo en el HTML Las variables
+deben ser públicas para poder ser compartidas al template.
+
+Ejemplo:
+    ...
+    export class AppComponent {
+      // Variable privada, no puede utilizarse en un interpolación
+      private title = 'Hola! soy una variable privada';
+    }

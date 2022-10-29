@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'my-app';
+  name = 'Alvaro'; //👌Public
+  edad = 21;
+  //Estando en el componente debemos crear un atributo que guarde la imagen
+  //En este caso usaremos una direccion que genera imagenes aleartorias al recargar la pagina
+  img = 'https://source.unsplash.com/random';
 }
