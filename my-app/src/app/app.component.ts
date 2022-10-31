@@ -15,7 +15,24 @@ export class AppComponent {
   //Vamos a crear un objeto para poder modificar a nivel dinamico los atributos
   persona ={
     name : 'Marcia',
-    edad : 19,
+    edad : 99,
     img : 'https://source.unsplash.com/random'
+  }
+
+  //Vamos a crear nuestro primer metodo para activar o desactivar un boton
+  //Hay que destacar que ocupamos el paradigma orientado a objetos ya que tenemos atributos
+  // a los cuales podemos acceder dentro de una clase, como tambien podemos poner modificadores de acceso
+  // a los metodos del mismo, pero en esta ocacion sera publico por defecto para poder usarlo en el componente de html
+  toggleButton(){
+    this.btnDisabled = !this.btnDisabled;
+  }
+
+  incrementoEdad(){
+   if(this.persona.edad <100){
+    this.persona.edad += 1;
+   }
+   else if(this.persona.edad >= 100){
+    alert("No puedes tener mas de 100 años no manches");
+   }
   }
 }

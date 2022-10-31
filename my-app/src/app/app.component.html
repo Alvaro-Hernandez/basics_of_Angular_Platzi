@@ -1,22 +1,33 @@
-<h1>Propiedades Property Binding</h1>
-<!-- simplemente utiliza los corchetes [] para poder modificar dinámicamente ese atributo desde el controlador. -->
-<button [disabled]="btnDisabled" >Enviar</button>
-<!-- Vamos a renderizar un input dinamicamente pero atraves de un objeto -->
-<input type="text" [value]="persona.name">
-<progress max="100" [value]="edad"></progress>
-<img [src]="persona.img" alt="imagenRamdon" width="100px">
-<hr/>
 <h1>Hola Mundo - String Interpolation</h1>
 <!-- Con el String Interpolation podemos renderizar un string por ejemplo que se repita 5 veces -->
 <h2>{{'Hola Mundo Interpolation '.repeat(5)}}</h2>
-
 <!-- Ahora crearemos otra etiqueta que me muestre la suma de dos numeros y luego lo renderice -->
 <!-- Esto me permite a mi trabajar desde el html con TypeScript-->
 <p>3+3 = {{3+3}}</p>
 <!-- Para poder tener accesos desde la clase a los atributos que deseamos renderizar -->
 <!-- El acceso debe ser publico por que si en dado caso es privado estamos diciendo que los atributos son de uso interno de la clase donde se declaran -->
 <h3> Hola Me llamo {{name}} y tengo {{edad}} años de edad</h3>
-
 <!-- Tambien podemos usar String interpolation en imagenes para ello lo declaramos en el componente -->
 <img src={{img}} alt="Imagen Ramdon">
+<hr/>
 
+<h1>Propiedades Property Binding</h1>
+<!-- simplemente utiliza los corchetes [] para poder modificar dinámicamente ese atributo desde el controlador. -->
+<button [disabled]="btnDisabled" >Enviar</button>
+<!-- Vamos a renderizar un input dinamicamente pero atraves de un objeto -->
+<input type="text" [value]="persona.name">
+<progress max="100" [value]="persona.edad"></progress>
+<img [src]="persona.img" alt="imagenRamdon" width="100px">
+<hr/>
+
+<h1>Eventos</h1>
+<button [disabled]="btnDisabled" >Enviar</button>
+<!-- Vamos a modificar el estado de nuestro boton de arriba atraves de un evento -->
+<!-- El cual se va a inicializar cuando demos click y llamara a la funcion que se creo -->
+<!-- en nuestro componente de typeScript -->
+<button (click)="toggleButton()">Activar o Desactivar Boton</button>
+
+<!-- Ahora vamos a incrementar la edad de la misma forma -->
+<p>Edad {{persona.edad}}</p>
+<!-- Creamos un boton que acceda al evento de nuestro componente e inicialice lo que esta dentro de el -->
+<button (click)="incrementoEdad()">Sube tu edad ++</button>

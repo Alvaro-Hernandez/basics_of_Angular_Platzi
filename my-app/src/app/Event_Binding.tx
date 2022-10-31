@@ -1,0 +1,50 @@
+A lo igual que el Property Binding nos permite modificar el valor de los atributos de los elementos HTML desde el controlador, el Event Binding permite controlar los eventos que suceden en estos elementos. El clic de un botón, detectar cambios en un campo, el envío de un formulario, entre otros eventos. Para esto utiliza los paréntesis () para el bindeo de la propiedad del elemento.
+
+Si tienes en tu componente:
+
+  @Component({
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.scss']
+  })
+  export class AppComponent {
+    enviarFormulario() {
+      // ...
+    }
+  }
+
+Puedes ejecutar el método enviarFormulario() cuando se realiza un clic en un botón de la siguiente manera:
+<button (click)="enviarFormulario()" >
+
+!!Mas Datos a Saber!!
+Pertenecientes a Victor Cañon
+Event Binding
+El Event Binding le permite escuchar y responder a las acciones del usuario,
+como pulsaciones de teclas, movimientos del mouse, clics y toques (Atributos HTML y propiedades DOM).
+
+Para vincular un elemento html a un evento, debemos indicar el nombre del evento
+entre paréntesis a la izquierda de un signo igual y el nombre de una funcion entre
+comillas a la derecha, recuerda indicar que se trata de una funcion con los parentecis “nameFunction()” .
+
+✌️Ejemplo:
+    <button (click)="onSave()">Save</button>
+
+Usar () en el template html es sinonimo de llamar “addEventListener()”
+Podemos realizar eventos personalizados con “EventEmitter”
+Podemos llamar multiples eventos de la siguiente forma
+
+✌️Ejemplo
+      <button (click)="clickEvent()" (mouseenter)="mouseEnterEvent()">Click Me</button>
+
+Podemos determinar un objetivo de evento de la siguiente manera:
+✌️Ejemplo
+  <button (click)="handleClick($event)">Save</button>
+
+Se recomienda comprender el flujo de datos de la aplicacion y como este interactua con la misma, existen tres tipos de enlaces:
+
+Enlace unidireccional [] para enlazar desde la capa logica (component.ts) a la vista (html).
+Enlace unidireccional () para enlazar de la vista (html) a la capa logica (component.ts).
+Enlace bidireccional [()] para enlazar una secuencia de vista bidireccional a la capa logica (component.ts).
+
+Event Binding
+El Event Binding le permite escuchar y responder a las acciones del usuario, como pulsaciones de teclas, movimientos del mouse, clics y toques (Atributos HTML y propiedades DOM).
