@@ -1,0 +1,65 @@
+Property Binding es la manera que dispone Angular para controlar y modificar las propiedades de los distintos elementos de HTML. Para esto, simplemente utiliza los corchetes [] para poder modificar dinámicamente ese atributo desde el controlador.
+Utilidades
+  ✅ El atributo src de la etiqueta <img> para modificar dinámicamente una imagen.
+  ✅ El atributo href de un <a> para modificar un enlace.
+  ✅ El atributo value de un <input> para autocompletar un valor de un formulario.
+  ✅ El atributo disable de un <input> para habilitar/deshabilitar un campo de un formulario.
+
+✌️Si tienes en tu componente:
+  @Component({
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.scss']
+  })
+  export class AppComponent {
+    empresa = 'Enginners Herz51';
+    habilitado = true;
+  }
+
+Puedes modificar el value de un campo de un formulario de la siguiente manera:
+<input [value]="empresa" [disabled]="habilitado"  />
+
+Se imprime el valor de la propiedad empresa como valor de un <input> y gracias a la
+variable habilitado controlas la edición del campo.
+
+//Visto desde el aporte de Victor Cañon Propertye Binding Es
+Es una forma de controlar dinamamicamente algunos atributos html
+para que estos sean renderizados apartir una string, variable o atributo de un
+objeto de la capa logica.
+
+Solo funcionan en una direccion desde la capa logica (conponent.ts) al objeto destino
+ (atributo html), a esto se le conoce como flujo de datos.
+
+Debemos vincular los valores del componente a los atributos html, esto logramos
+encerrando el atributo html entre “square brakets”.
+
+Los corchetes [ ] (square brakets) hacen que Angular evalúe el lado derecho de la
+asignación como una expresión dinámica. Sin los corchetes, Angular trata el lado
+derecho como un literal de cadena y establece la propiedad en ese valor estático.
+
+✌️Ejemplo:
+    <button disabled="false"></button> // dato fijo como string
+    <button [disabled]="btnDisabled"></button> //dato dinamico
+
+A menudo, “interpolation” y “Property Binding” pueden lograr los mismos resultados. Los siguientes pares de enlaces hacen lo mismo.
+
+✌️Ejemplo:
+    <p><img src="{{itemImageUrl}}"> is the <i>interpolated</i> image.</p>
+    <p><img [src]="itemImageUrl"> is the <i>property bound</i> image.</p>
+
+Utilice cualquiera de las formas cuando represente valores de datos como cadenas.
+
+Es preferible el metodo de “interpolation” para facilitar la lectura.
+
+Al establecer una propiedad de elemento en un valor de datos que no sea una cadena,
+debe usar “Property Binding”.
+
+Se recomienda comprender los “Event binding” para entender el flujo de datos de la
+aplicacion y como este interactua con “interpolation” y “Property Binding”.
+
+USO✅
+Property Binding es para configurar propiedades de elementos de HTML(estado del boton, value)
+String Interpolation se usa para renderizar contenido como un parrafo o un h1
+
+RECUERDA!!
+Para configurar propiedad usemos los corchetes de arreglo "[]"

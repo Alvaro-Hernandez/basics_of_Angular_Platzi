@@ -1,4 +1,12 @@
-<h1>Hola Mundo</h1>
+<h1>Propiedades Property Binding</h1>
+<!-- simplemente utiliza los corchetes [] para poder modificar dinámicamente ese atributo desde el controlador. -->
+<button [disabled]="btnDisabled" >Enviar</button>
+<!-- Vamos a renderizar un input dinamicamente pero atraves de un objeto -->
+<input type="text" [value]="persona.name">
+<progress max="100" [value]="edad"></progress>
+<img [src]="persona.img" alt="imagenRamdon" width="100px">
+<hr/>
+<h1>Hola Mundo - String Interpolation</h1>
 <!-- Con el String Interpolation podemos renderizar un string por ejemplo que se repita 5 veces -->
 <h2>{{'Hola Mundo Interpolation '.repeat(5)}}</h2>
 
