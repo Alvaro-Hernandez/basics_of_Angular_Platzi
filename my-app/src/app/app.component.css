@@ -1,0 +1,8 @@
+.box{
+  position: relative;
+  height: 200px;
+  width: 200px;
+  overflow-y: scroll;
+  background-color: tomato;
+  margin: 10px 10px 10px 10px;
+}

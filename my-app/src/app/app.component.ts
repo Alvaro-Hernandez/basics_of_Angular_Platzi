@@ -27,6 +27,7 @@ export class AppComponent {
     this.btnDisabled = !this.btnDisabled;
   }
 
+  // Con este evento incrementamos la edad del atributo edad en el objeto persona
   incrementoEdad(){
    if(this.persona.edad <100){
     this.persona.edad += 1;
@@ -34,5 +35,17 @@ export class AppComponent {
    else if(this.persona.edad >= 100){
     alert("No puedes tener mas de 100 años no manches");
    }
+  }
+
+  // Vamos a crear un evento que al momento de dar scroll haga una funcion recibiendo el evento
+  onScroll(event : Event){
+    const element = event.target as HTMLElement;
+    console.log(element.scrollTop);
+  }
+
+  //Vamos a crear un evento al momento de teclear
+  changeName(event : Event){
+    const element = event.target as HTMLInputElement;
+    this.persona.name=element.value;
   }
 }
