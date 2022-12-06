@@ -1,0 +1,67 @@
+ata binding con ngModel
+Importante recalcar que para hacer uso de ngModel debemos importar el “FormModule” y habilitar el mismo en app.module.ts
+
+ngModel raliza un seguimiento del valor y el estado de validación de un control de formulario individual debido a las propiedades que hereda de FormControl es recomentado saber como funciona dicho proceso.
+
+Podemos personalizar las validaciones que deberia tener un campo o el mismo formulario
+
+Aqui utilizamos las variables de referencia (las que tienen el signo #) y debemos indicar que la variable debera tomar el valor del ngModel <<#nameInput=“ngModel”>>
+
+Se pueden realizar las validaciones que normalmente encontramos en html y con “pattern” podemos especificar una comprobacion como exprecion regular
+
+Podemos tener un flujo de datos unidireccional con [] o bidireccional con [()]
+
+Acepta inputs
+
+Cuando se utiliza el ngModel sin la etiqueta <form> es necesario proporcionar un “nombre de atributo” de manera que el control pueda ser registrado en el formulario padre bajo ese nombre.
+
+✌️Ejemplo
+//comportamiento del ngModel sin etiqueta <form>
+  	//html
+  	<input [(ngModel)]="name" #ctrl="ngModel" required>
+  	//capa logica
+  	name: string = '';
+//Comportamiento dentro de un form
+	//html
+	<form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+		<input name="first" ngModel required #first="ngModel">
+		<input name="last" ngModel>
+    		<button>Submit</button>
+	</form>
+  	//capa logica
+	onSubmit(f: NgForm) {
+	console.log(f.value);  // { first: '', last: '' }
+	console.log(f.valid);  // false
+	}
+
+En el contexto de un formulario principal, a menudo no es necesario incluir
+enlaces unidireccionales o bidireccionales, ya que el formulario principal se
+encarga de su  sincronizacion
+
+El atributo ngModel permite el intercambio de datos de forma bidireccional entre
+el componente y la vista. Lo que suceda en el componente, se verá reflejado en la
+vista. Lo que se suceda en la vista, inmediatamente impactará en el componente.
+
+<input [(ngModel)]="name">
+
+ngModel usar tanto los corchetes [] como los paréntesis (). De esta manera, se
+vuelve bidireccional el intercambio de datos. Si no quieres la bidirección, solo
+colocamos los corchetes [ngModel] para que la comunicación sea unidireccional.
+Para utilizar ngModel, es necesario hacer uso e importar Angular Forms. Para esto,
+dirígete al archivo app.module.ts que es el módulo principal de toda aplicación
+Angular y agrega lo siguiente:
+
+import { FormsModule } from '@angular/forms';
+
+@NgModule({
+  declarations: [ ... ],
+  imports: [
+    FormsModule
+  ],
+  providers: [],
+  bootstrap: [ ... ]
+})
+export class AppModule { }
+
+De esta manera puedes importar el módulo FormsModule
+desde @angular/forms y agregarlo a imports para emplear la propiedad [(ngModel)].
