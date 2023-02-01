@@ -1,0 +1,31 @@
+Angular también ofrece la sentencia *ngSwitch y *ngSwitchCase
+para determinar el flujo de control de tu aplicación y qué elemento
+mostrar entre multiples elementos HTML.Además de utilizar un elemento
+default con *ngSwitchDefault en caso de que ninguna condición se cumpla.
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss']
+})
+
+export class AppComponent {
+    color: string = 'verde';
+}
+
+🫡Ejemplo de *ngSwitchCase
+<div [ngSwitch]="color">
+    <p *ngSwitchCase="'azul'">
+        El color el Azul
+    </p>
+    <p *ngSwitchCase="'verde'">
+        El color el Verde
+    </p>
+    <p *ngSwitchCase="'rojo'">
+        El color el Rojo
+    </p>
+    <p *ngSwitchDefault>
+        No hay ningún color
+    </p>
+</div>
+

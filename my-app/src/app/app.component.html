@@ -109,3 +109,38 @@ que este arreglo se este recorriendo para luego poder renderizarlo a traves de S
     <p>{{product.name}}</p>
   </div>
 </div>
+<hr>
+
+<h1>ngSwitch</h1>
+<input type="text" required [(ngModel)]="persona.name">
+<!-- En lugar de tener muchos ngIf como lo vemos abajo, usaremos el ngSwitch para
+trabajar de una manera mas eficiente -->
+<!-- <p *ngIf="persona.name === 'Alvaro'">
+  La persona es Alvaro
+</p>
+
+<p *ngIf="persona.name === 'Thais'">
+  La persona es Thais
+</p>
+
+<p *ngIf="persona.name === 'Angie'">
+  La persona es Angie
+</p> -->
+
+<!-- Viendose de la siguiente forma -->
+<div [ngSwitch]="persona.name">
+  <p *ngSwitchCase="'Alvaro'">
+    La persona es Alvaro
+  </p>
+
+  <p *ngSwitchCase="'Thais'">
+    La persona es Thais
+  </p>
+
+  <p *ngSwitchCase="'Angie'">
+    La persona es Angie
+  </p>
+  <p *ngSwitchDefault>
+    No hace match
+  </p>
+</div>
