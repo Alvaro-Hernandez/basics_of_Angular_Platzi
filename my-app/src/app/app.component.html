@@ -54,3 +54,14 @@
 <p>Valid: {{nameInput.valid}}</p>
 <input type="number" max="20" min="15" required #ageInput="ngModel" [(ngModel)]="persona.edad"/>
 <p>Valid: {{ageInput.valid}}</p>
+<hr>
+
+<h1>*ngIf</h1>
+<input type="text" required [(ngModel)]="persona.name"/>
+<input type="number" required [(ngModel)]="persona.edad"/>
+<p *ngIf="persona.name === 'Alvaro' && persona.edad === 20"> Si, ese un un Hombre Inteligente</p>
+<p *ngIf="persona.name === 'Angie'; else elseBlock"> Si, es una chica Hermosa e Inteligente 💛</p>
+
+<ng-template #elseBlock>
+  <p>Chale aun no es ninguno de ellos aun</p>
+</ng-template>

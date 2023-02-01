@@ -15,7 +15,7 @@ export class AppComponent {
   btnDisabled = true;
   //Vamos a crear un objeto para poder modificar a nivel dinamico los atributos
   persona ={
-    name : 'Alvaro',
+    name : 'Mauricio',
     edad : 10,
     img : 'https://source.unsplash.com/random'
   }
