@@ -1,14 +1,14 @@
 <h1>Hola Mundo - String Interpolation</h1>
 <!-- Con el String Interpolation podemos renderizar un string por ejemplo que se repita 5 veces -->
-<h2>{{'Hola Mundo Interpolation '.repeat(5)}}</h2>
+<h2>{{'Hola Mundo Interpolation '.repeat(2)}}</h2>
 <!-- Ahora crearemos otra etiqueta que me muestre la suma de dos numeros y luego lo renderice -->
 <!-- Esto me permite a mi trabajar desde el html con TypeScript-->
-<p>3+3 = {{3+3}}</p>
+<p> 3 + 2 = {{3+2}}</p>
 <!-- Para poder tener accesos desde la clase a los atributos que deseamos renderizar -->
 <!-- El acceso debe ser publico por que si en dado caso es privado estamos diciendo que los atributos son de uso interno de la clase donde se declaran -->
 <h3> Hola Me llamo {{name}} y tengo {{edad}} años de edad</h3>
 <!-- Tambien podemos usar String interpolation en imagenes para ello lo declaramos en el componente -->
-<img src={{img}} alt="Imagen Ramdon">
+<img class="img2" src={{img}} alt="Imagen Ramdon">
 <hr/>
 
 <h1>Propiedades Property Binding</h1>
