@@ -1,4 +1,4 @@
-ata binding con ngModel
+Data binding con ngModel
 Importante recalcar que para hacer uso de ngModel debemos importar el “FormModule” y habilitar el mismo en app.module.ts
 
 ngModel raliza un seguimiento del valor y el estado de validación de un control de formulario individual debido a las propiedades que hereda de FormControl es recomentado saber como funciona dicho proceso.
