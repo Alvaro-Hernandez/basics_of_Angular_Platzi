@@ -31,20 +31,21 @@
 <p>Edad {{persona.edad}}</p>
 <!-- Creamos un boton que acceda al evento de nuestro componente e inicialice lo que esta dentro de el -->
 <button (click)="incrementoEdad()">Sube tu edad ++</button>
+<button (click)="decrementoEdad()">Sube tu edad ++</button>
 
 <!-- Hacemos uso del evento scrool para poder saber sus movimientos y creamos un metodo que reciba este evento -->
 <!-- Para realizar una funcion y ver que ocurre -->
 <div class="box" (scroll) = "onScroll($event)">
   <p>Nombre {{persona.name}}</p>
   <!-- Vamos a capturar otro evento el cual es keyup que nos permite saber cada vez que tecleamos  -->
-  <input type="text" [value]="persona.name" (keyup)="changeName($event)">
   <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore eum magnam provident impedit asperiores atque voluptatum eligendi deserunt minima, itaque, fuga doloribus aperiam, enim accusantium. A magni dicta corrupti pariatur!
-  Mollitia quod veritatis eveniet accusantium nobis velit! Nam, dolores expedita. Distinctio deserunt veniam magnam ad. Enim placeat vitae fugiat praesentium! Expedita magni quod minima dolores in id vitae facere sed.
-  Sit, deleniti commodi! Velit dignissimos optio, ex reiciendis earum aliquam autem atque libero tempora modi quae ipsa incidunt est nemo possimus perferendis nulla consequatur deserunt recusandae cum. Repellendus, molestias totam.
-  Enim, cum rem commodi dolor ab doloremque placeat distinctio quidem tenetur molestiae, fugit suscipit repellat perspiciatis culpa totam. Quidem necessitatibus labore reiciendis ducimus magnam temporibus consectetur aut deleniti at assumenda!
-  Quibusdam assumenda libero ratione enim expedita quis? Delectus et, quam maiores non vitae iure odio soluta magni minima ducimus. Quia magni aut cum commodi. Autem iste possimus aperiam quasi ad.</p>
+    Mollitia quod veritatis eveniet accusantium nobis velit! Nam, dolores expedita. Distinctio deserunt veniam magnam ad. Enim placeat vitae fugiat praesentium! Expedita magni quod minima dolores in id vitae facere sed.
+    Sit, deleniti commodi! Velit dignissimos optio, ex reiciendis earum aliquam autem atque libero tempora modi quae ipsa incidunt est nemo possimus perferendis nulla consequatur deserunt recusandae cum. Repellendus, molestias totam.
+    Enim, cum rem commodi dolor ab doloremque placeat distinctio quidem tenetur molestiae, fugit suscipit repellat perspiciatis culpa totam. Quidem necessitatibus labore reiciendis ducimus magnam temporibus consectetur aut deleniti at assumenda!
+    Quibusdam assumenda libero ratione enim expedita quis? Delectus et, quam maiores non vitae iure odio soluta magni minima ducimus. Quia magni aut cum commodi. Autem iste possimus aperiam quasi ad.</p>
 </div>
-
+<input type="text" [value]="persona.name" (keyup)="changeName($event)">
+<hr>
 <h1>NgModel</h1>
 <p>Nombre {{persona.name}}</p>
 <!-- Con esta funcion vamos a trabajar sobre el ngModel el cual permite el intercambio de datos en el cual nosotros le adjuntamos el objeto al cual se le va a cambiar el nombre -->

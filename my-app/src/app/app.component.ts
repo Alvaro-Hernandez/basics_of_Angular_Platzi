@@ -16,7 +16,7 @@ export class AppComponent {
   //Vamos a crear un objeto para poder modificar a nivel dinamico los atributos
   persona ={
     name : 'Alvaro',
-    edad : 100,
+    edad : 10,
     img : 'https://source.unsplash.com/random'
   }
 
@@ -38,6 +38,15 @@ export class AppComponent {
    }
   }
 
+  decrementoEdad(){
+    if(this.persona.edad > 0 && this.persona.edad <=100){
+      this.persona.edad -= 1;
+    }
+    else if(this.persona.edad <= 0){
+      alert("No has nacido amigo mio");
+    }
+  }
+
   // Vamos a crear un evento que al momento de dar scroll haga una funcion recibiendo el evento
   onScroll(event : Event){
     const element = event.target as HTMLElement;
@@ -49,4 +58,5 @@ export class AppComponent {
     const element = event.target as HTMLInputElement;
     this.persona.name=element.value;
   }
+
 }
