@@ -99,3 +99,13 @@ que este arreglo se este recorriendo para luego poder renderizarlo a traves de S
     <button (click)="deleteMeta(i)">Eliminar una Meta 🥹</button>
   </li>
 </ul>
+<hr>
+
+<h1>*ngFor para Arreglos</h1>
+<div>
+  <div *ngFor=" let product of products">
+    <img [src]="product.image" alt="image" width="250px">
+    <h2>{{product.price}}</h2>
+    <p>{{product.name}}</p>
+  </div>
+</div>
