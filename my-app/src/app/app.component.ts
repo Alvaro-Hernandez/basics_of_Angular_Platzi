@@ -59,4 +59,31 @@ export class AppComponent {
     this.persona.name=element.value;
   }
 
+  //Creremos un arreglo que estara tipado en tipo string
+  emojis: string[] = ['💛' , '🐦', '🐳','🌮', '✨'];
+  newEmoji= '';
+
+  //Vamos a crear un evento para poder agregar un emoji
+  addEmoji(){
+    this.emojis.push(this.newEmoji);
+    this.newEmoji='';
+  }
+
+  //Vamos a crear un evento para eliminar un emoji
+  deleteEmoji(index : number){
+    this.emojis.splice(index, 1);
+  }
+
+  //Crearemos un Reto sobre las Metas
+  metas: String[] = [];
+  newMeta = '';
+  //Evento para añadir una meta al arreglo
+  addMeta(){
+    this.metas.push(this.newMeta);
+    this.newMeta = '';
+  }
+  //Evento para eliminar una meta del arreglo
+  deleteMeta(index: number){
+    this.metas.splice(index, 1);
+  }
 }

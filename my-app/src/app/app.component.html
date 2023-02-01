@@ -65,3 +65,37 @@
 <ng-template #elseBlock>
   <p>Chale aun no es ninguno de ellos aun</p>
 </ng-template>
+<hr>
+
+<h1>*ngFor</h1>
+<!-- Ahora vamos a añadir un nuevo emoji a la lista necesitaremos un input y boton -->
+<!-- E inicializar una variable en nuestro componente -->
+<input type="text" required [(ngModel)]="newEmoji"/>
+<button (click)="addEmoji()">Add Emojis🫡</button>
+<!-- Para recorrer la lista de emojis que creamos en nuestro componente hacemos de
+*ngFor la cual recorrera nuestra lista o arreglo al crear una variable que tome el valor en el indice
+que este arreglo se este recorriendo para luego poder renderizarlo a traves de String Interpolation -->
+<ul>
+  <!-- Creamos un condicion con la directiva condicional *ngIf para cuando la lista se encuentre
+  nos muestre el mensaje que haga mencion a ello -->
+  <li *ngIf="emojis.length === 0">Lista de Emojis Vacia 🥹</li>
+  <li *ngFor="let emoji of emojis; index as i" >
+    {{i}} {{emoji}}
+    <!-- Ahora Crearemos un boton que elimine los emojis, creando un boton con el evento click
+    el cual recibe una funcion y a demas el indice del emoji, siendo esta la posicion del mismo
+    para poder eliminarlo -->
+    <button (click)="deleteEmoji(i)">Delete Emoji😲</button>
+  </li>
+</ul>
+<hr>
+<h2>Reto 01 *ngFor Cumplido ✅</h2>
+<h3> Lista de Metas</h3>
+<input type="text" required [(ngModel)]="newMeta">
+<button (click)="addMeta()">Añadir una Meta</button>
+<ul>
+  <li *ngIf="metas.length === 0">Aun no hay metas💔</li>
+  <li *ngFor="let meta of metas; index as i">
+    {{i}} {{meta}}
+    <button (click)="deleteMeta(i)">Eliminar una Meta 🥹</button>
+  </li>
+</ul>

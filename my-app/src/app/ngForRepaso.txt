@@ -1,0 +1,45 @@
+Al igual que con un If, Angular permite iterar un array de números,
+de cadenas de caracteres o de objetos usando “*ngFor”.Si tienes en tu
+componente un array de datos:
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss']
+})
+export class AppComponent {
+  myArray: string[] = [
+    'Platzi',
+    'es',
+    'genial!'
+  ];
+}
+
+Puedes mostrar cada elemento iterando el array en un elemento HTML:
+<ul>
+    <li *ngFor="let str of myArray">
+        {{ str }}
+    </li>
+</ul>
+
+El *ngFor crea una variable temporal llamada str (o el nombre que más te guste)
+que contiene cada valor de myArray. Finalmente, utilizando una interpolación,
+muestras el valor de str.Quedando tu HTML de la siguiente manera:
+<ul><li>Platzi</li><li>es</li><li>genial!</li></ul>
+
+Índice de iteración
+ngFor también cuenta con un índice con el número de iteraciones.
+Puedes acceder a este número agregando al ngFor index as i de la siguiente manera:
+<ul>
+    <li *ngFor="let str of myArray; index as i">
+        {{ i }}. {{ str }}
+    </li>
+</ul>
+
+Cada iteración contiene una variable i con el índice que le corresponde.
+Iniciando desde cero, da como resultado:
+<ul>
+    <li>0. Platzi</li>
+    <li>1. es</li>
+    <li>2. genial!</li>
+</ul>
