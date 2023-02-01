@@ -46,8 +46,11 @@
 </div>
 <input type="text" [value]="persona.name" (keyup)="changeName($event)">
 <hr>
+
 <h1>NgModel</h1>
 <p>Nombre {{persona.name}}</p>
 <!-- Con esta funcion vamos a trabajar sobre el ngModel el cual permite el intercambio de datos en el cual nosotros le adjuntamos el objeto al cual se le va a cambiar el nombre -->
-<input type="text" [(ngModel)]="persona.name"/>
-
+<input type="text" required #nameInput="ngModel" [(ngModel)]="persona.name"/>
+<p>Valid: {{nameInput.valid}}</p>
+<input type="number" max="20" min="15" required #ageInput="ngModel" [(ngModel)]="persona.edad"/>
+<p>Valid: {{ageInput.valid}}</p>
