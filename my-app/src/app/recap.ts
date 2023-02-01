@@ -27,6 +27,8 @@ class Persona{
   apellido: string;
   //constructor, si pongo el alcance como parametro, la variable se crea y se autoasigna con el parametro
   //Este nos permite inicializar los datos que la clase necesite
+  //constructor (public edad: number, public apellido: string){}
+
   constructor(edad: number, apellido:string){
     this.edad = edad;
     this.apellido = apellido;
@@ -48,7 +50,6 @@ marcia.edad;
 // que recibe atributos y luego los asigna con la siguiente forma
 
 //const PersonaL{
-
   //constructor(public edad: number, public apellido:string){}
 //}
 
