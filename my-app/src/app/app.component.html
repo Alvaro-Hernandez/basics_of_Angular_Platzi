@@ -1,76 +1,100 @@
 <h1>Hola Mundo - String Interpolation</h1>
 <!-- Con el String Interpolation podemos renderizar un string por ejemplo que se repita 5 veces -->
-<h2>{{'Hola Mundo Interpolation '.repeat(2)}}</h2>
+<h2>{{ "Hola Mundo Interpolation ".repeat(2) }}</h2>
 <!-- Ahora crearemos otra etiqueta que me muestre la suma de dos numeros y luego lo renderice -->
 <!-- Esto me permite a mi trabajar desde el html con TypeScript-->
-<p> 3 + 2 = {{3+2}}</p>
+<p>3 + 2 = {{ 3 + 2 }}</p>
 <!-- Para poder tener accesos desde la clase a los atributos que deseamos renderizar -->
 <!-- El acceso debe ser publico por que si en dado caso es privado estamos diciendo que los atributos son de uso interno de la clase donde se declaran -->
-<h3> Hola Me llamo {{name}} y tengo {{edad}} años de edad</h3>
+<h3>Hola Me llamo {{ name }} y tengo {{ edad }} años de edad</h3>
 <!-- Tambien podemos usar String interpolation en imagenes para ello lo declaramos en el componente -->
-<img class="img2" src={{img}} alt="Imagen Ramdon">
-<hr/>
+<img class="img2" src="{{ img }}" alt="Imagen Ramdon" />
+<hr />
 
 <h1>Propiedades Property Binding</h1>
 <!-- simplemente utiliza los corchetes [] para poder modificar dinámicamente ese atributo desde el controlador. -->
-<button [disabled]="btnDisabled" >Enviar</button>
+<button [disabled]="btnDisabled">Enviar</button>
 <!-- Vamos a renderizar un input dinamicamente pero atraves de un objeto -->
-<input type="text" [value]="persona.name">
+<input type="text" [value]="persona.name" />
 <progress max="100" [value]="persona.edad"></progress>
-<img [src]="persona.img" alt="imagenRamdon" width="100px">
-<hr/>
+<img [src]="persona.img" alt="imagenRamdon" width="100px" />
+<hr />
 
 <h1>Eventos</h1>
-<button [disabled]="btnDisabled" >Enviar</button>
+<button [disabled]="btnDisabled">Enviar</button>
 <!-- Vamos a modificar el estado de nuestro boton de arriba atraves de un evento -->
 <!-- El cual se va a inicializar cuando demos click y llamara a la funcion que se creo -->
 <!-- en nuestro componente de typeScript -->
 <button (click)="toggleButton()">Activar o Desactivar Boton</button>
 
 <!-- Ahora vamos a incrementar la edad de la misma forma -->
-<p>Edad {{persona.edad}}</p>
+<p>Edad {{ persona.edad }}</p>
 <!-- Creamos un boton que acceda al evento de nuestro componente e inicialice lo que esta dentro de el -->
 <button (click)="incrementoEdad()">Sube tu edad ++</button>
 <button (click)="decrementoEdad()">Sube tu edad ++</button>
 
 <!-- Hacemos uso del evento scrool para poder saber sus movimientos y creamos un metodo que reciba este evento -->
 <!-- Para realizar una funcion y ver que ocurre -->
-<div class="box" (scroll) = "onScroll($event)">
-  <p>Nombre {{persona.name}}</p>
+<div class="box" (scroll)="onScroll($event)">
+  <p>Nombre {{ persona.name }}</p>
   <!-- Vamos a capturar otro evento el cual es keyup que nos permite saber cada vez que tecleamos  -->
-  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore eum magnam provident impedit asperiores atque voluptatum eligendi deserunt minima, itaque, fuga doloribus aperiam, enim accusantium. A magni dicta corrupti pariatur!
-    Mollitia quod veritatis eveniet accusantium nobis velit! Nam, dolores expedita. Distinctio deserunt veniam magnam ad. Enim placeat vitae fugiat praesentium! Expedita magni quod minima dolores in id vitae facere sed.
-    Sit, deleniti commodi! Velit dignissimos optio, ex reiciendis earum aliquam autem atque libero tempora modi quae ipsa incidunt est nemo possimus perferendis nulla consequatur deserunt recusandae cum. Repellendus, molestias totam.
-    Enim, cum rem commodi dolor ab doloremque placeat distinctio quidem tenetur molestiae, fugit suscipit repellat perspiciatis culpa totam. Quidem necessitatibus labore reiciendis ducimus magnam temporibus consectetur aut deleniti at assumenda!
-    Quibusdam assumenda libero ratione enim expedita quis? Delectus et, quam maiores non vitae iure odio soluta magni minima ducimus. Quia magni aut cum commodi. Autem iste possimus aperiam quasi ad.</p>
+  <p>
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore eum magnam
+    provident impedit asperiores atque voluptatum eligendi deserunt minima,
+    itaque, fuga doloribus aperiam, enim accusantium. A magni dicta corrupti
+    pariatur! Mollitia quod veritatis eveniet accusantium nobis velit! Nam,
+    dolores expedita. Distinctio deserunt veniam magnam ad. Enim placeat vitae
+    fugiat praesentium! Expedita magni quod minima dolores in id vitae facere
+    sed. Sit, deleniti commodi! Velit dignissimos optio, ex reiciendis earum
+    aliquam autem atque libero tempora modi quae ipsa incidunt est nemo possimus
+    perferendis nulla consequatur deserunt recusandae cum. Repellendus,
+    molestias totam. Enim, cum rem commodi dolor ab doloremque placeat
+    distinctio quidem tenetur molestiae, fugit suscipit repellat perspiciatis
+    culpa totam. Quidem necessitatibus labore reiciendis ducimus magnam
+    temporibus consectetur aut deleniti at assumenda! Quibusdam assumenda libero
+    ratione enim expedita quis? Delectus et, quam maiores non vitae iure odio
+    soluta magni minima ducimus. Quia magni aut cum commodi. Autem iste possimus
+    aperiam quasi ad.
+  </p>
 </div>
-<input type="text" [value]="persona.name" (keyup)="changeName($event)">
-<hr>
+<input type="text" [value]="persona.name" (keyup)="changeName($event)" />
+<hr />
 
 <h1>NgModel</h1>
-<p>Nombre {{persona.name}}</p>
+<p>Nombre {{ persona.name }}</p>
 <!-- Con esta funcion vamos a trabajar sobre el ngModel el cual permite el intercambio de datos en el cual nosotros le adjuntamos el objeto al cual se le va a cambiar el nombre -->
-<input type="text" required #nameInput="ngModel" [(ngModel)]="persona.name"/>
-<p>Valid: {{nameInput.valid}}</p>
-<input type="number" max="20" min="15" required #ageInput="ngModel" [(ngModel)]="persona.edad"/>
-<p>Valid: {{ageInput.valid}}</p>
-<hr>
+<input type="text" required #nameInput="ngModel" [(ngModel)]="persona.name" />
+<p>Valid: {{ nameInput.valid }}</p>
+<input
+  type="number"
+  max="20"
+  min="15"
+  required
+  #ageInput="ngModel"
+  [(ngModel)]="persona.edad"
+/>
+<p>Valid: {{ ageInput.valid }}</p>
+<hr />
 
 <h1>*ngIf</h1>
-<input type="text" required [(ngModel)]="persona.name"/>
-<input type="number" required [(ngModel)]="persona.edad"/>
-<p *ngIf="persona.name === 'Alvaro' && persona.edad === 20"> Si, ese un un Hombre Inteligente</p>
-<p *ngIf="persona.name === 'Angie'; else elseBlock"> Si, es una chica Hermosa e Inteligente 💛</p>
+<input type="text" required [(ngModel)]="persona.name" />
+<input type="number" required [(ngModel)]="persona.edad" />
+<p *ngIf="persona.name === 'Alvaro' && persona.edad === 20">
+  Si, ese un un Hombre Inteligente
+</p>
+<p *ngIf="persona.name === 'Angie'; else elseBlock">
+  Si, es una chica Hermosa e Inteligente 💛
+</p>
 
 <ng-template #elseBlock>
   <p>Chale aun no es ninguno de ellos aun</p>
 </ng-template>
-<hr>
+<hr />
 
 <h1>*ngFor</h1>
 <!-- Ahora vamos a añadir un nuevo emoji a la lista necesitaremos un input y boton -->
 <!-- E inicializar una variable en nuestro componente -->
-<input type="text" required [(ngModel)]="newEmoji"/>
+<input type="text" required [(ngModel)]="newEmoji" />
 <button (click)="addEmoji()">Add Emojis🫡</button>
 <!-- Para recorrer la lista de emojis que creamos en nuestro componente hacemos de
 *ngFor la cual recorrera nuestra lista o arreglo al crear una variable que tome el valor en el indice
@@ -79,40 +103,40 @@ que este arreglo se este recorriendo para luego poder renderizarlo a traves de S
   <!-- Creamos un condicion con la directiva condicional *ngIf para cuando la lista se encuentre
   nos muestre el mensaje que haga mencion a ello -->
   <li *ngIf="emojis.length === 0">Lista de Emojis Vacia 🥹</li>
-  <li *ngFor="let emoji of emojis; index as i" >
-    {{i}} {{emoji}}
+  <li *ngFor="let emoji of emojis; index as i">
+    {{ i }} {{ emoji }}
     <!-- Ahora Crearemos un boton que elimine los emojis, creando un boton con el evento click
     el cual recibe una funcion y a demas el indice del emoji, siendo esta la posicion del mismo
     para poder eliminarlo -->
     <button (click)="deleteEmoji(i)">Delete Emoji😲</button>
   </li>
 </ul>
-<hr>
+<hr />
 <h2>Reto 01 *ngFor Cumplido ✅</h2>
-<h3> Lista de Metas</h3>
-<input type="text" required [(ngModel)]="newMeta">
+<h3>Lista de Metas</h3>
+<input type="text" required [(ngModel)]="newMeta" />
 <button (click)="addMeta()">Añadir una Meta</button>
 <ul>
   <li *ngIf="metas.length === 0">Aun no hay metas💔</li>
   <li *ngFor="let meta of metas; index as i">
-    {{i}} {{meta}}
+    {{ i }} {{ meta }}
     <button (click)="deleteMeta(i)">Eliminar una Meta 🥹</button>
   </li>
 </ul>
-<hr>
+<hr />
 
 <h1>*ngFor para Arreglos</h1>
 <div class="products--grid">
-  <div *ngFor=" let product of products">
-    <img [src]="product.image" alt="image">
-    <h2>{{product.price}}</h2>
-    <p>{{product.name}}</p>
+  <div *ngFor="let product of products">
+    <img [src]="product.image" alt="image" />
+    <h2>{{ product.price }}</h2>
+    <p>{{ product.name }}</p>
   </div>
 </div>
-<hr>
+<hr />
 
 <h1>ngSwitch</h1>
-<input type="text" required [(ngModel)]="persona.name">
+<input type="text" required [(ngModel)]="persona.name" />
 <!-- En lugar de tener muchos ngIf como lo vemos abajo, usaremos el ngSwitch para
 trabajar de una manera mas eficiente -->
 <!-- <p *ngIf="persona.name === 'Alvaro'">
@@ -129,36 +153,62 @@ trabajar de una manera mas eficiente -->
 
 <!-- Viendose de la siguiente forma -->
 <div [ngSwitch]="persona.name">
-  <p *ngSwitchCase="'Alvaro'">
-    La persona es Alvaro
-  </p>
+  <p *ngSwitchCase="'Alvaro'">La persona es Alvaro</p>
 
-  <p *ngSwitchCase="'Thais'">
-    La persona es Thais
-  </p>
+  <p *ngSwitchCase="'Thais'">La persona es Thais</p>
 
-  <p *ngSwitchCase="'Angie'">
-    La persona es Angie
-  </p>
-  <p *ngSwitchDefault>
-    No hace match
-  </p>
+  <p *ngSwitchCase="'Angie'">La persona es Angie</p>
+  <p *ngSwitchDefault>No hace match</p>
 </div>
-<hr>
+<hr />
 
 <h1>Class and Style</h1>
-<input type="text" required #nameInput5="ngModel" [(ngModel)]="persona.name">
-<p class="message-error" [class.active]="nameInput5.invalid"> El campo es requerido</p>
-<hr>
-<h1>Estilos</h1>
-<label >Nombre</label>
-<input type="text" required #nameInput6="ngModel" [(ngModel)]="persona.name">
-<p [style.font-style]="nameInput6.invalid ? 'italic' : 'normal'"> Texto Texto Texto</p>
+<h2>Class</h2>
+<input type="text" required #nameInput5="ngModel" [(ngModel)]="persona.name" />
+<p class="message-error" [class.invalid]="nameInput5.invalid">
+  El campo es requerido
+</p>
+<h1>Style</h1>
+<label>Nombre</label>
+<input type="text" required #nameInput6="ngModel" [(ngModel)]="persona.name" />
+<p [style.font-style]="nameInput6.invalid ? 'italic' : 'normal'">
+  Texto Texto Texto
+</p>
 <div class="BoxImg">
   <div>
-  <input type="text" [(ngModel)]="widthImg">
+    <input type="text" [(ngModel)]="widthImg" />
   </div>
   <div>
-  <img [src]="persona.img" alt="imagenRamdon" [style.width.px]="widthImg">
+    <img [src]="persona.img" alt="imagenRamdon" [style.width.px]="widthImg" />
+  </div>
+</div>
+<hr />
+<h1>NgClass and NgStyle</h1>
+<input type="text" required #nameInput10="ngModel" [(ngModel)]="persona.name" />
+<hr
+  class="line-error"
+  [ngClass]="{
+    'valid': nameInput10.valid,
+    'invalid': nameInput10.invalid
+  }"
+/>
+<p class="message-error" [class.invalid]="nameInput10.invalid">
+  El campo es requerido
+</p>
+
+<!-- Ahora lo haremos con los Styles -->
+<div class="BoxImg">
+  <div>
+    <input type="number" [(ngModel)]="box.width" />
+    <input type="number" [(ngModel)]="box.height" />
+    <input type="color" [(ngModel)]="box.background" />
+  </div>
+  <div>
+    <div [ngStyle]="{
+      'width.px': box.width,
+      'height.px': box.height,
+      'background-color': box.background,
+      'display': 'block'
+    }"></div>
   </div>
 </div>

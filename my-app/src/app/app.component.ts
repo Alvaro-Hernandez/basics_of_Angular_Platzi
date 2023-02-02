@@ -124,4 +124,10 @@ export class AppComponent {
       image: './assets/images/glasses.jpg'
     }
   ]
+  //Para probar la directiva de NgStyle crearemos un objeto para manipular propiedades de una Caja
+  box = {
+    width:100,
+    height:100,
+    background: 'red'
+  }
 }

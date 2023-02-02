@@ -37,13 +37,26 @@
   transition: all linear .5s;
 }
 
-.active{
+.invalid{
 opacity: 1;
 }
 
 .BoxImg{
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+}
+
+.line-error{
+  height: 0;
+  border-bottom: 3px solid;
+}
+
+.line-error.valid{
+  border-color: green;
+}
+
+.line-error.invalid{
+  border-color: red;
 }
 
 @media screen and (min-width: 40em) {

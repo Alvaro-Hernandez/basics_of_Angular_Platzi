@@ -1,0 +1,25 @@
+Con el binding de [class] y [style] puedes agregar clases y estilos fácilmente.
+Pero se vuelve algo complicado en el caso de que necesites agregar varias clases
+o modificar muchos estilos. Es por esto que Angular ofrece las directivas
+ngClass y ngStyle para este propósito.
+
+Puedes bindear la directiva [ngStyle] o [ngClass] y pasarle un objeto con cada
+propiedad o clase que deseas agregar:
+🫡Ejemplo
+<p
+    [ngStyle]="{
+        'color': textColor,
+        'background': textBackground
+    }"
+></p>
+
+El operador ternario será tu mejor aliado para agregar o quitar clases y estilos:
+🫡Ejemplo
+<div
+    [ngClass]="isAvailable ? 'active-class' : 'deactivate-class'">
+</div>
+
+O puedes usar las Interpolaciones en lugar del binding:
+<p
+    ngClass="{{ isAvailable ? 'active-class' : 'deactivate-class' }}">
+</p>
