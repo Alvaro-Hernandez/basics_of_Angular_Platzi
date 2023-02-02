@@ -144,3 +144,21 @@ trabajar de una manera mas eficiente -->
     No hace match
   </p>
 </div>
+<hr>
+
+<h1>Class and Style</h1>
+<input type="text" required #nameInput5="ngModel" [(ngModel)]="persona.name">
+<p class="message-error" [class.active]="nameInput5.invalid"> El campo es requerido</p>
+<hr>
+<h1>Estilos</h1>
+<label >Nombre</label>
+<input type="text" required #nameInput6="ngModel" [(ngModel)]="persona.name">
+<p [style.font-style]="nameInput6.invalid ? 'italic' : 'normal'"> Texto Texto Texto</p>
+<div class="BoxImg">
+  <div>
+  <input type="text" [(ngModel)]="widthImg">
+  </div>
+  <div>
+  <img [src]="persona.img" alt="imagenRamdon" [style.width.px]="widthImg">
+  </div>
+</div>

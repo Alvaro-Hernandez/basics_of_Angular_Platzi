@@ -10,6 +10,8 @@ import { Product } from './product.model';
 export class AppComponent {
   name = 'Angie'; //👌Public
   edad = 20;
+  //Añadimos esta variable para manipular de manera dinamica el tamaño de una imagen
+  widthImg =10;
   //Estando en el componente debemos crear un atributo que guarde la imagen
   //En este caso usaremos una direccion que genera imagenes aleartorias al recargar la pagina
   img = 'https://source.unsplash.com/random';

@@ -30,6 +30,22 @@
   margin: 0;
 }
 
+.message-error{
+  background: red;
+  color: white;
+  opacity: 0;
+  transition: all linear .5s;
+}
+
+.active{
+opacity: 1;
+}
+
+.BoxImg{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
 @media screen and (min-width: 40em) {
   .products--grid {
     display: grid;
