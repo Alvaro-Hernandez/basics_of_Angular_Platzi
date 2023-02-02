@@ -212,3 +212,24 @@ trabajar de una manera mas eficiente -->
     }"></div>
   </div>
 </div>
+<hr>
+<h1>Formulario</h1>
+<form (ngSubmit)="onRegister()" #myForm="ngForm">
+  <div class="input.group">
+    <label for="name">Nombre</label>
+    <input type="text" name="name" required id="name" #namInput="ngModel" [(ngModel)]="register.name">
+    <p class="campo-error" [class.invalid]="namInput.invalid" >Campos Vacios o Invalidos</p>
+  </div>
+  <div class="input.group">
+    <label for="Email">Email</label>
+    <input type="email" name="email" required id="email" [(ngModel)]="register.email"  #emailInput="ngModel">
+    <p class="campo-error" [class.invalid]="emailInput.invalid" >Campos Vacios o Invalidos</p>
+  </div>
+  <div class="input.group">
+    <label for="password">Password</label>
+    <input type="password" name="password" required id="password" [(ngModel)]="register.password" #passInput="ngModel">
+    <p class="campo-error" [class.invalid]="passInput.invalid" >Campos Vacios o Invalidos</p>
+  </div>
+  <button [disabled]="myForm.invalid" type="submit">Registrar</button>
+  <button type="button">Accion</button>
+</form>

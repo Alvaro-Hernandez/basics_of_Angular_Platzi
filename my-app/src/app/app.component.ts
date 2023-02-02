@@ -130,4 +130,16 @@ export class AppComponent {
     height:100,
     background: 'red'
   }
+
+  //Modelo para el registro de nuestro formulario
+  register = {
+    name : '',
+    email : '',
+    password : '',
+  }
+
+  //Creamos un evento para enviar el formulario
+  onRegister(){
+    console.log(this.register);
+  }
 }
